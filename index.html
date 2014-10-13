@@ -3,6 +3,9 @@
 <html lang="en" ng-app="win10challenge">
 <head>
     <meta charset="utf-8">
+    <meta property="og:title" content="Windows 10 Challenge" />
+    <meta property="og:description" content="Are you ready for the new Windows 10 UI? Take the challenge now!" />
+    <meta property="og:image" content="http://www.dotnetweekly.com/games/win10challenge/images/windows10.jpg" />
 
     <title>Windows 10 Challenge. Are you ready?</title>
     <meta name="description" content="Windows 10 Challenge. Are you ready?">
@@ -36,7 +39,7 @@
 
 </script>
 <div class="game" ng-controller="GameController" ng-click="toggleActionStrong('skypeButtonToggle',false)">
-<div style="color:#ffffff">{{step}}</div>
+    <div style="color:#ffffff">{{step}}</div>
     <div class="background" ng-click="resetStuff()">
         &nbsp;
     </div>
@@ -51,9 +54,9 @@
     </div>
 
     <div class="challenge-message" ng-show="challengeMessage != null">
-            <div class="challenge-inner">
-                {{challengeMessage}}
-            </div>
+        <div class="challenge-inner">
+            {{challengeMessage}}
+        </div>
     </div>
 
     <div class="windows">
@@ -114,12 +117,11 @@
         <img class="pointer left" src="images/btnStore.jpg"/>
     </div>
 
-    <div>{{step}}</div>
     <div class="challenge-complete" ng-show="step == 10">
         <div class="left-50">
             Congratulations you are <span class="show-score">{{score}}</span> % ready for Windows 10!!
             <br/><br/>
-            <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?s=100&p[title]=Windows%2010%20will%20be%20released%20soon!%20Are%20you%20ready%20for%20the%20new%20UI?%20Take%20the%20challenge%20now!%20Click%20here!&p[url]=http://www.dotnetweekly.com/games/win10challenge&p[summary]=I%20am%20{percent_score}%20%%20ready%20for%20Windows%2010!%20Want%20to%20see%20how%20ready%20you%20are%20for%20the%20new%20Windows%2010%20UI"><img src="images/share.png" /></a>
+            <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?s=100&p[title]=Windows%2010%20will%20be%20released%20soon!%20Are%20you%20ready%20for%20the%20new%20UI?%20Take%20the%20challenge%20now!%20Click%20here!&p[url]=http://www.dotnetweekly.com/games/win10challenge&p[summary]=I%20am%20{{score}}%20%%20ready%20for%20Windows%2010!%20Want%20to%20see%20how%20ready%20you%20are%20for%20the%20new%20Windows%2010%20UI"><img src="images/share.png" /></a>
             <br/><br/>
             <a target="_blank" href="http://www.dotnetweekly.com">Click here to checkout DotNetWeekly a free newsletter for .NET developers!</a>
         </div>
