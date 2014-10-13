@@ -1,0 +1,258 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+body, html{
+    padding:0;
+    margin:0;
+    background-color:black;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.background{
+    width:100%;
+    height:100%;
+}
+
+.pointer{
+    cursor:pointer;
+}
+
+.hidden{
+    display: none;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.right{
+    float:right;
+}
+
+.left{
+    float:left;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.margin-50{
+    margin-left:-50%;
+}
+
+.padding-right{
+    padding-right:10px;
+}
+
+.padding-left{
+    padding-left:10px;
+}
+
+.padding-top{
+    padding-top:10px;
+}
+
+.padding-small-top{
+    padding-top:5px;
+}
+
+.header{
+    box-shadow: 3px 3px 3px #ffffff;
+    -moz-box-shadow: 1px 1px 1px #ffffff;
+    -webkit-box-shadow: 1px 1px 1px #ffffff;
+    top:0px;
+    left:0px;
+    position: absolute;
+    height:40px;
+    background-color:#1974b9;
+    color:#ffffff;
+    font-size:22px;
+}
+
+.window{
+    position:absolute;
+    top:100px;
+    left:50%;
+}
+
+.taskbar{
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    background-color: #626262;
+}
+
+.taskbar img{
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:5px;
+    cursor:pointer;
+}
+
+.startBox{
+    position:absolute;
+    bottom:46px;
+    left:0px;
+}
+
+.challenge-message{
+    position:absolute;
+    width:100%;
+    top:41px;
+    text-align: center;
+}
+
+.challenge-inner{
+    background-color:#ffffff;
+    padding:10px;
+    font-size:21px;
+    line-height:21px;
+}
+
+.appMenu{
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 5px;
+    right: 0px;
+}
+
+.appMenu img{
+    padding-left:2px;
+}
+
+.skypeOptions{
+    position:absolute;
+    top:60px;
+    right:-110px;
+}
+
+.game {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.skypeWide{
+    position: absolute;
+    top: 120px;
+    left: 200px;
+    width: 155px;
+    height: 25px;
+}
+
+.musicApp{
+    display: block;
+    position: absolute;
+    top: 83px;
+    height: 70%;
+}
+
+.musicAppImg{
+    height: 100%;
+}
+
+.musicClose{
+    position: absolute;
+    top: 0px;
+    left:97%;
+    width: 27px;
+    height: 27px;
+}
+
+.musicSettings{
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    width: 27px;
+    height: 27px;
+}
+
+.musicFullScreen{
+    position: absolute;
+    top: 178px;
+    left: 0px;
+    width: 175px;
+    height: 19px;
+}
+
+.musicCharms{
+    position: absolute;
+    top: 155px;
+    left: 0px;
+    width: 175px;
+    height: 22px;
+}
+
+.appSettings{
+    position: absolute;
+    top: 20px;
+    left: 0px;
+}
+
+.parallelDesktops{
+    bottom: 46px;
+    position: absolute;
+}
+
+.changeStartMenu1{
+    position:absolute;
+    bottom:50px;
+    left:45%;
+}
+
+.changeStartMenu2{
+    position:absolute;
+    bottom:50px;
+    left:45%;
+}
+
+.taskbarOptions{
+    position: absolute;
+    bottom: 4px;
+    width: 230px;
+    height: 20px;
+    cursor:pointer;
+}
+
+.taskbarStartMenu{
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    width: 15px;
+    height: 30px;
+    cursor:pointer;
+}
+
+.success-message-wrap{
+    position:absolute;
+    top:100px;
+    left:45%;
+    color:#ffffff;
+    font-size:65px;
+}
+
+.challenge-complete{
+    position: absolute;
+    left: 50%;
+    top: 150px;
+    width: 450px;
+    color:#ffffff;
+    font-size:25px;
+    text-align: center;
+}
+
+.challenge-complete a{
+    color:#ffffff;
+    text-decoration: none;
+}
+
+.challenge-complete .left-50{
+    right:50%;
+    position: relative;
+}
+
+.show-score{
+    font-size:40px;
+}

@@ -1,0 +1,139 @@
+<!doctype html>
+
+<html lang="en" ng-app="win10challenge">
+<head>
+    <meta charset="utf-8">
+
+    <title>Windows 10 Challenge. Are you ready?</title>
+    <meta name="description" content="Windows 10 Challenge. Are you ready?">
+    <meta name="author" content="Bill Stavroulakis">
+
+    <link rel="stylesheet" href="css/style.css?v=1.0">
+    <link rel="stylesheet" href="css/jquery-letterfx.min.css?v=1.0">
+    <script src="scripts/angular.min.js" type="text/javascript"></script>
+    <script src="scripts/game.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+</head>
+
+<body oncontextmenu="return false">
+<script type="text/javascript">
+    var gaq;
+    var _gaq = gaq || [];
+    _gaq.push(['_setAccount', 'UA-31484897-1']);
+    _gaq.push(['_setDomainName', 'dotnetweekly.com']);
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www')
+                + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+<div class="game" ng-controller="GameController" ng-click="toggleActionStrong('skypeButtonToggle',false)">
+<div style="color:#ffffff">{{step}}</div>
+    <div class="background" ng-click="resetStuff()">
+        &nbsp;
+    </div>
+
+    <div class="header full-width">
+        <div class="left padding-small-top padding-left">
+            Windows 10 Challenge | Are you ready?
+        </div>
+        <div class="right padding-small-top padding-right">
+            Time: <span class="time">{{time}}</span>
+        </div>
+    </div>
+
+    <div class="challenge-message" ng-show="challengeMessage != null">
+            <div class="challenge-inner">
+                {{challengeMessage}}
+            </div>
+    </div>
+
+    <div class="windows">
+        <div class="window" ng-show="step == 0">
+            <img ng-click="goToStep(1)" class="margin-50 pointer" src="images/start.png"/>
+        </div>
+    </div>
+
+    <div class="musicApp" ng-show="toggles.appToggle && gameStarted">
+        <img class="musicAppImg" src="images/musicApp.jpg"/>
+        <div class="musicClose" ng-click="toggleAction('appToggle',false)"></div>
+        <div class="musicSettings pointer" ng-click="toggleAction('appSettingsToggle')">
+            <div ng-show="toggles.appSettingsToggle">
+                <img class="appSettings" src="images/settings.jpg"/>
+                <div class="musicFullScreen pointer" ng-click="goToStep(6)"></div>
+                <div class="musicCharms pointer" ng-click="goToStep(7)"></div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-show="(toggles.startMenuChange1 || toggles.startMenuChange2) && gameStarted">
+        <div class="changeStartMenu1" ng-show="toggles.startMenuChange1">
+            <img src="images/taskbarOptions.jpg"/>
+            <div class="taskbarOptions" ng-click="toggleActionStrong('startMenuChange2',true);toggleActionStrong('startMenuChange1',false)"></div>
+        </div>
+        <div class="changeStartMenu2" ng-show="toggles.startMenuChange2">
+            <img src="images/taskbarStartMenu.jpg"/>
+            <div class="taskbarStartMenu pointer"  ng-click="goToStep(10)"></div>
+        </div>
+    </div>
+
+    <div class="parallelDesktops" ng-show="toggles.parallelBoxToggle && gameStarted">
+        <img class="pointer" ng-show="(step <= 7)" ng-click="goToStep(8)" src="images/addADesktop.jpg"/>
+        <img class="pointer" ng-show="(step == 8)" ng-click="goToStep(9)" src="images/parallelSelect.jpg"/>
+    </div>
+
+    <div class="startBox" ng-show="toggles.startButtonToggle && gameStarted">
+        <img src="images/startBox.jpg" />
+        <div class="appMenu">
+            <img class="pointer left appSkype" ng-show="!toggles.skypeButtonToggle" ng-click="goToStep(3)" ng-right-click="toggleAction('skypeButtonToggle',true)" src="images/appSkype.jpg"/>
+            <img class="pointer left appSkypeSelected" ng-show="toggles.skypeButtonToggle" src="images/appSkypeSelected.jpg"/>
+            <div class="skypeOptions">
+                <img class="pointer appSkypeSelected" ng-show="toggles.skypeButtonToggle" src="images/skypeOptions.png"/>
+                <div class="skypeWide pointer" ng-click="goToStep(4);"></div>
+            </div>
+            <img class="pointer left"  src="images/appMail.jpg"/>
+            <img class="pointer left" ng-click="goToStep(5);toggleActionStrong('startButtonToggle',false);toggleActionStrong('appToggle',true)" src="images/appMusic.jpg"/>
+            <img class="pointer left" src="images/appVideo.jpg"/>
+        </div>
+    </div>
+
+    <div ng-show="gameStarted" class="taskbar" ng-show="gameStarted" ng-right-click="toggleActionStrong('startMenuChange1',true)">
+        <img class="pointer startBtn left" ng-click="toggleAction('startButtonToggle');goToStep(2)" src="images/btnStart.jpg"/>
+        <img class="pointer searchBtn left" src="images/btnSearch.jpg"/>
+        <img class="pointer parallelsBtn left" ng-click="toggleAction('parallelBoxToggle')" src="images/btnParallels.jpg"/>
+        <img class="pointer left" src="images/btnIE.jpg"/>
+        <img class="pointer left" src="images/btnFolder.jpg"/>
+        <img class="pointer left" src="images/btnStore.jpg"/>
+    </div>
+
+    <div>{{step}}</div>
+    <div class="challenge-complete" ng-show="step == 10">
+        <div class="left-50">
+            Congratulations you are <span class="show-score">{{score}}</span> % ready for Windows 10!!
+            <br/><br/>
+            <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?s=100&p[title]=Windows%2010%20will%20be%20released%20soon!%20Are%20you%20ready%20for%20the%20new%20UI?%20Take%20the%20challenge%20now!%20Click%20here!&p[url]=http://www.dotnetweekly.com/games/win10challenge&p[summary]=I%20am%20{percent_score}%20%%20ready%20for%20Windows%2010!%20Want%20to%20see%20how%20ready%20you%20are%20for%20the%20new%20Windows%2010%20UI"><img src="images/share.png" /></a>
+            <br/><br/>
+            <a target="_blank" href="http://www.dotnetweekly.com">Click here to checkout DotNetWeekly a free newsletter for .NET developers!</a>
+        </div>
+    </div>
+
+</div>
+
+<div class="success-message-wrap">
+    <div class="success-message margin-50"></div>
+</div>
+
+
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="scripts/jquery-letterfx.min.js"></script>
+</body>
+
+</html>
